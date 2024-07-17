@@ -40,7 +40,7 @@
 
                             
                             <Button
-                                Command="{Binding #Root.((vm:MainWindowViewModel)DataContext).RemoveItemCommand}"
+                                Command="{Binding #Root.((vm:MainWindowViewModel)DataContext).EditItemCommand}"
                                 CommandParameter="{Binding .}"
                                 Grid.Column="1" Background="{DynamicResource AccentButtonBackground}">
                                 <PathIcon Data="{DynamicResource EditIconData}" Foreground="White" />
@@ -59,32 +59,32 @@
             </ItemsControl>
         </ScrollViewer>
 
-        <Grid Grid.Row="2" ColumnDefinitions="*, Auto">
-            
-            <TextBox Grid.Column="0"
-                     Text="{Binding NewItemContent}"
-                     Watermark="Add a new Item">
-                </TextBox>
-            
-            <Button Grid.Column="1"  Background="{DynamicResource AccentButtonBackground}"
-                     Command="{Binding AddItemCommand}">
-                <PathIcon Data="{DynamicResource AcceptIconData}" Foreground="Green" />
-            </Button>
-        </Grid>
-        
-        <!--     <TextBox Grid.Row="2" -->
+        <!-- <Grid Grid.Row="2" ColumnDefinitions="*, Auto"> -->
+        <!--      -->
+        <!--     <TextBox Grid.Column="0" -->
         <!--              Text="{Binding NewItemContent}" -->
         <!--              Watermark="Add a new Item"> -->
-        <!--     <TextBox.InnerRightContent > -->
-        <!--         <Button  Background="{DynamicResource AccentButtonBackground}" -->
-        <!--                  Command="{Binding AddItemCommand}"> -->
-        <!--             <PathIcon Data="{DynamicResource AcceptIconData}" Foreground="Green" /> -->
-        <!--         </Button> -->
-        <!--     </TextBox.InnerRightContent> -->
-        <!--     <TextBox.KeyBindings> -->
-        <!--         <KeyBinding Command="{Binding AddItemCommand}" Gesture="Enter" /> -->
-        <!--     </TextBox.KeyBindings> -->
-        <!-- </TextBox> -->
+        <!--         </TextBox> -->
+        <!--      -->
+        <!--     <Button Grid.Column="1"  Background="{DynamicResource AccentButtonBackground}" -->
+        <!--              Command="{Binding AddItemCommand}"> -->
+        <!--         <PathIcon Data="{DynamicResource AcceptIconData}" Foreground="Green" /> -->
+        <!--     </Button> -->
+        <!-- </Grid> -->
+        
+            <TextBox Grid.Row="2"
+                     Text="{Binding NewItemContent}"
+                     Watermark="Add a new Item">
+            <TextBox.InnerRightContent >
+                <Button  Background="{DynamicResource AccentButtonBackground}"
+                         Command="{Binding AddItemCommand}">
+                    <PathIcon Data="{DynamicResource AcceptIconData}" Foreground="GhostWhite" />
+                </Button>
+            </TextBox.InnerRightContent>
+            <TextBox.KeyBindings>
+                <KeyBinding Command="{Binding AddItemCommand}" Gesture="Enter" />
+            </TextBox.KeyBindings>
+        </TextBox>
         
 
     </Grid>

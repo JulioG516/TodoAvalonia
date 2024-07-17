@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "SqhPBJdTHQieaLPeJMiDMrKduahlR7P7jABDZJwmRbjUH8S4fUT0zld8pHotp9tLjg/2RSDGaojeRFq+ZgDOWw==",
+  "dgSpecHash": "KnjaphhdfsxqSfwxDQnirljVT8pWRDhtp+HM8/B0DmRR6yTuCd2GDf7BZhdgcSWokZM9omSC/r4x3Z8/OTGwxg==",
   "success": true,
   "projectFilePath": "C:\\Users\\julio.gabriel\\RiderProjects\\TodoAvalonia\\TodoAvalonia\\TodoAvalonia.csproj",
   "expectedPackageFiles": [
@@ -33,6 +33,8 @@
     "C:\\Users\\julio.gabriel\\.nuget\\packages\\microsoft.codeanalysis.csharp.scripting\\3.8.0\\microsoft.codeanalysis.csharp.scripting.3.8.0.nupkg.sha512",
     "C:\\Users\\julio.gabriel\\.nuget\\packages\\microsoft.codeanalysis.scripting.common\\3.8.0\\microsoft.codeanalysis.scripting.common.3.8.0.nupkg.sha512",
     "C:\\Users\\julio.gabriel\\.nuget\\packages\\microsoft.csharp\\4.3.0\\microsoft.csharp.4.3.0.nupkg.sha512",
+    "C:\\Users\\julio.gabriel\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\8.0.0\\microsoft.extensions.dependencyinjection.8.0.0.nupkg.sha512",
+    "C:\\Users\\julio.gabriel\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
     "C:\\Users\\julio.gabriel\\.nuget\\packages\\microsoft.netcore.platforms\\2.1.2\\microsoft.netcore.platforms.2.1.2.nupkg.sha512",
     "C:\\Users\\julio.gabriel\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\julio.gabriel\\.nuget\\packages\\skiasharp\\2.88.7\\skiasharp.2.88.7.nupkg.sha512",

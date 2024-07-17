@@ -1,10 +1,11 @@
-﻿using TodoAvalonia.ViewModels;
+﻿using TodoAvalonia.Services;
+using TodoAvalonia.ViewModels;
 
 namespace TodoAvalonia.ViewModelSample;
 
 public class DesignMainWindowView : MainWindowViewModel
 {
-    public DesignMainWindowView()
+    public DesignMainWindowView(  ) : base()
     {
         ToDoItems.Add(new ToDoItemViewModel()
         {
@@ -17,5 +18,7 @@ public class DesignMainWindowView : MainWindowViewModel
             Content = "Learn Avalonia UI",
             IsChecked = true
         });
+
+        NewItemContent = "Learn how to use DI";
     }
 }

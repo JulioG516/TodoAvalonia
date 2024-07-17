@@ -1,11 +1,18 @@
 ﻿using System.Collections.ObjectModel;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using TodoAvalonia.Services;
 
 namespace TodoAvalonia.ViewModels;
 
 public partial class MainWindowViewModel : ViewModelBase
 {
+
+    public MainWindowViewModel( )
+    {
+      
+    }
+    
     /// <summary>
     /// Gets a collection of <see cref="TodoAvalonia.Models.ToDoItem"/> TodoItem which allows adding and removing items
     /// </summary>
@@ -37,6 +44,17 @@ public partial class MainWindowViewModel : ViewModelBase
 
         // Reset the New Item Content
         NewItemContent = null;
+    }
+
+    /// <summary>
+    ///  To edit the item, we pick the value and put on the textbox and remove old one
+    /// </summary>
+    /// <param name="item"></param>
+    [RelayCommand]
+    private void EditItem(ToDoItemViewModel item)
+    {
+        NewItemContent = item.Content;
+        RemoveItem(item);
     }
 
     /// <summary>
