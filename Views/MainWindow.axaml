@@ -1,0 +1,92 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:TodoAvalonia.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewModelSample="clr-namespace:TodoAvalonia.ViewModelSample"
+        mc:Ignorable="d" d:DesignWidth="350" d:DesignHeight="500"
+        Width="350" Height="500"
+        x:Class="TodoAvalonia.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="TodoAvalonia">
+
+    <Design.DataContext>
+        <!-- This only sets the DataContext for the previewer in an IDE,
+             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+        <viewModelSample:DesignMainWindowView />
+    </Design.DataContext>
+
+    <Grid RowDefinitions="Auto, *, Auto"
+          x:Name="Root">
+        <TextBlock Classes="h1" Text="Achilles Todo" />
+
+        <ScrollViewer Grid.Row="1">
+            <!-- This ItemsControl show all added ToDoItems. -->
+            <!-- It needs to be placed inside a ScrollViewer because other than a ListBox it has not its own -->
+            <ItemsControl ItemsSource="{Binding ToDoItems}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate DataType="vm:ToDoItemViewModel">
+                        <Grid ColumnDefinitions="*,Auto, Auto" >
+                             <CheckBox
+                                IsChecked="{Binding IsChecked}" >
+                                 
+                                 <!-- Textblock is the content -->
+                                 <TextBlock 
+                                            Text="{Binding Content}"
+                                            Classes.item-checked="{Binding IsChecked}"/>
+
+                             </CheckBox>
+
+                            
+                            <Button
+                                Command="{Binding #Root.((vm:MainWindowViewModel)DataContext).RemoveItemCommand}"
+                                CommandParameter="{Binding .}"
+                                Grid.Column="1" Background="{DynamicResource AccentButtonBackground}">
+                                <PathIcon Data="{DynamicResource EditIconData}" Foreground="White" />
+                            </Button>
+                            
+                            <Button
+                                Command="{Binding #Root.((vm:MainWindowViewModel)DataContext).RemoveItemCommand}"
+                                CommandParameter="{Binding .}"
+                                Grid.Column="2" Background="{DynamicResource AccentButtonBackground}">
+                                <PathIcon Data="{DynamicResource DeleteIconData}" Foreground="Red" />
+                            </Button>
+
+                        </Grid>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
+
+        <Grid Grid.Row="2" ColumnDefinitions="*, Auto">
+            
+            <TextBox Grid.Column="0"
+                     Text="{Binding NewItemContent}"
+                     Watermark="Add a new Item">
+                </TextBox>
+            
+            <Button Grid.Column="1"  Background="{DynamicResource AccentButtonBackground}"
+                     Command="{Binding AddItemCommand}">
+                <PathIcon Data="{DynamicResource AcceptIconData}" Foreground="Green" />
+            </Button>
+        </Grid>
+        
+        <!--     <TextBox Grid.Row="2" -->
+        <!--              Text="{Binding NewItemContent}" -->
+        <!--              Watermark="Add a new Item"> -->
+        <!--     <TextBox.InnerRightContent > -->
+        <!--         <Button  Background="{DynamicResource AccentButtonBackground}" -->
+        <!--                  Command="{Binding AddItemCommand}"> -->
+        <!--             <PathIcon Data="{DynamicResource AcceptIconData}" Foreground="Green" /> -->
+        <!--         </Button> -->
+        <!--     </TextBox.InnerRightContent> -->
+        <!--     <TextBox.KeyBindings> -->
+        <!--         <KeyBinding Command="{Binding AddItemCommand}" Gesture="Enter" /> -->
+        <!--     </TextBox.KeyBindings> -->
+        <!-- </TextBox> -->
+        
+
+    </Grid>
+
+</Window>
