@@ -4,6 +4,7 @@
     <option name="projectPerEditor">
       <map>
         <entry key="App.axaml" value="TodoAvalonia.csproj" />
+        <entry key="Assets/Style.axaml" value="TodoAvalonia.csproj" />
         <entry key="Views/MainWindow.axaml" value="TodoAvalonia.csproj" />
       </map>
     </option>

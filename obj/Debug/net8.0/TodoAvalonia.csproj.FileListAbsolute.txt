@@ -127,3 +127,4 @@ C:\Users\julio.gabriel\RiderProjects\TodoAvalonia\TodoAvalonia\obj\Debug\net8.0\
 C:\Users\julio.gabriel\RiderProjects\TodoAvalonia\TodoAvalonia\obj\Debug\net8.0\ref\TodoAvalonia.dll
 C:\Users\julio.gabriel\RiderProjects\TodoAvalonia\TodoAvalonia\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
 C:\Users\julio.gabriel\RiderProjects\TodoAvalonia\TodoAvalonia\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\julio.gabriel\RiderProjects\TodoAvalonia\TodoAvalonia\obj\Debug\net8.0\TodoAvalonia.sourcelink.json

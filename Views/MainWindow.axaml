@@ -9,7 +9,11 @@
         x:Class="TodoAvalonia.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
         Icon="/Assets/avalonia-logo.ico"
-        Title="TodoAvalonia">
+        Title="TodoAvalonia"
+        TransparencyLevelHint="AcrylicBlur"
+        Background="Transparent"
+        ExtendClientAreaToDecorationsHint="True"
+        >
 
     <Design.DataContext>
         <!-- This only sets the DataContext for the previewer in an IDE,
@@ -17,8 +21,23 @@
         <viewModelSample:DesignMainWindowView />
     </Design.DataContext>
 
-    <Grid RowDefinitions="Auto, *, Auto"
-          x:Name="Root">
+    <Panel>
+        <ExperimentalAcrylicBorder IsHitTestVisible="False">
+            <ExperimentalAcrylicBorder.Material>
+                <ExperimentalAcrylicMaterial
+                    BackgroundSource="Digger"
+                    TintColor="Black"
+                    TintOpacity="1"
+                    MaterialOpacity="0.85"
+                    >
+                </ExperimentalAcrylicMaterial>
+            </ExperimentalAcrylicBorder.Material>
+        </ExperimentalAcrylicBorder>
+        
+        
+        
+        <Grid RowDefinitions="Auto, *, Auto"
+              x:Name="Root">
         <TextBlock Classes="h1" Text="Achilles Todo" />
 
         <ScrollViewer Grid.Row="1">
@@ -42,14 +61,14 @@
                             <Button
                                 Command="{Binding #Root.((vm:MainWindowViewModel)DataContext).EditItemCommand}"
                                 CommandParameter="{Binding .}"
-                                Grid.Column="1" Background="{DynamicResource AccentButtonBackground}">
+                                Grid.Column="1" Background="{DynamicResource GrayShade}">
                                 <PathIcon Data="{DynamicResource EditIconData}" Foreground="White" />
                             </Button>
                             
                             <Button
                                 Command="{Binding #Root.((vm:MainWindowViewModel)DataContext).RemoveItemCommand}"
                                 CommandParameter="{Binding .}"
-                                Grid.Column="2" Background="{DynamicResource AccentButtonBackground}">
+                                Grid.Column="2" Background="{DynamicResource GrayShade}">
                                 <PathIcon Data="{DynamicResource DeleteIconData}" Foreground="Red" />
                             </Button>
 
@@ -59,34 +78,25 @@
             </ItemsControl>
         </ScrollViewer>
 
-        <!-- <Grid Grid.Row="2" ColumnDefinitions="*, Auto"> -->
-        <!--      -->
-        <!--     <TextBox Grid.Column="0" -->
-        <!--              Text="{Binding NewItemContent}" -->
-        <!--              Watermark="Add a new Item"> -->
-        <!--         </TextBox> -->
-        <!--      -->
-        <!--     <Button Grid.Column="1"  Background="{DynamicResource AccentButtonBackground}" -->
-        <!--              Command="{Binding AddItemCommand}"> -->
-        <!--         <PathIcon Data="{DynamicResource AcceptIconData}" Foreground="Green" /> -->
-        <!--     </Button> -->
-        <!-- </Grid> -->
+
         
             <TextBox Grid.Row="2"
                      Text="{Binding NewItemContent}"
                      Watermark="Add a new Item">
             <TextBox.InnerRightContent >
-                <Button  Background="{DynamicResource AccentButtonBackground}"
+                <Button  Background="{DynamicResource GrayShade}"
                          Command="{Binding AddItemCommand}">
                     <PathIcon Data="{DynamicResource AcceptIconData}" Foreground="GhostWhite" />
                 </Button>
             </TextBox.InnerRightContent>
-            <TextBox.KeyBindings>
+            <TextBox.KeyBindings> 
                 <KeyBinding Command="{Binding AddItemCommand}" Gesture="Enter" />
             </TextBox.KeyBindings>
         </TextBox>
         
 
     </Grid>
+    </Panel>
+   
 
 </Window>

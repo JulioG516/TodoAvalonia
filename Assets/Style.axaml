@@ -1,0 +1,59 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Design.PreviewWith>
+        <Border Padding="20">
+            <!-- Add Controls for Previewer Here -->
+        </Border>
+    </Design.PreviewWith>
+
+    <!-- Add Styles Here -->
+    
+        <Style Selector="TextBlock.h1">
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="FontSize" Value="15" />
+            <Setter Property="Margin" Value="5" />
+        </Style>
+
+        <!--  We want our CheckBox to be stretched horizontally (the default is left-aligned)  -->
+        <Style Selector="CheckBox">
+            <Setter Property="HorizontalAlignment" Value="Stretch" />
+        </Style>
+
+        <Style Selector="CheckBox:checked">
+
+            <Style.Resources>
+                <SolidColorBrush x:Key="CheckBoxCheckBackgroundStrokeChecked">#fff</SolidColorBrush>
+                <SolidColorBrush x:Key="CheckBoxCheckBackgroundFillChecked">#2f2e2e</SolidColorBrush>
+
+                <SolidColorBrush x:Key="CheckBoxCheckBackgroundStrokeCheckedPressed">#fff</SolidColorBrush>
+                <SolidColorBrush x:Key="CheckBoxCheckBackgroundFillCheckedPressed">#2f2e2e</SolidColorBrush>
+                
+                <SolidColorBrush x:Key="CheckBoxCheckBackgroundStrokePressed">#fff</SolidColorBrush>
+                <SolidColorBrush x:Key="CheckBoxCheckBackgroundFillPressed">#2f2e2e</SolidColorBrush>
+
+                <SolidColorBrush x:Key="CheckBoxCheckBackgroundStrokeCheckedPointerOver">#2f2e2e</SolidColorBrush>
+                <SolidColorBrush x:Key="CheckBoxCheckBackgroundFillCheckedPointerOver">#2f2e2e</SolidColorBrush>
+            </Style.Resources>
+
+        </Style>
+
+        <!--  These styles add some useful feedback for the user  -->
+        <Style Selector="CheckBox:pointerover /template/ Grid#RootGrid">
+            <Setter Property="Background" Value="{DynamicResource GrayShade}" />
+        </Style>
+
+
+
+        <!-- This style will make the icon semi-transparent, if a button is disabled -->
+        <Style Selector="Button:disabled PathIcon">
+            <Setter Property="Opacity" Value="0.4" />
+        </Style>
+
+        <!-- This style will strike the text if the checkbox is marked -->
+        <Style Selector="TextBlock.item-checked">
+            <Setter Property="TextDecorations" Value="Strikethrough" />
+            <Setter Property="Opacity" Value="0.6" />
+            <Setter Property="FontWeight" Value="Bold" />
+        </Style>
+
+</Styles>

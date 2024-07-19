@@ -20,5 +20,11 @@ build_property.EnableGeneratedComInterfaceComImportInterop =
 [C:/Users/julio.gabriel/RiderProjects/TodoAvalonia/TodoAvalonia/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[C:/Users/julio.gabriel/RiderProjects/TodoAvalonia/TodoAvalonia/Assets/IconsAndColors.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[C:/Users/julio.gabriel/RiderProjects/TodoAvalonia/TodoAvalonia/Assets/Style.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [C:/Users/julio.gabriel/RiderProjects/TodoAvalonia/TodoAvalonia/Views/MainWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
